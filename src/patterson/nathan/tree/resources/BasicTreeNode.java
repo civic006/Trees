@@ -2,10 +2,10 @@ package patterson.nathan.tree.resources;
 
 public class BasicTreeNode {
 	
-	int data;
-	BasicTreeNode left = null;
-	BasicTreeNode right = null;
-	BasicTreeNode parent = null;
+	private int data;
+	private BasicTreeNode left = null;
+	private BasicTreeNode right = null;
+	private BasicTreeNode parent = null;
 
 	public BasicTreeNode(int data) {
 		this.data = data;
@@ -34,6 +34,27 @@ public class BasicTreeNode {
 	public void setRight(BasicTreeNode right) {
 		this.right = right;
 	}
+
+	public BasicTreeNode getParent() {
+		return parent;
+	}
+
+	public void setParent(BasicTreeNode parent) {
+		this.parent = parent;
+	}
 	
+	public String toString(){
+		StringBuffer myBuff = new StringBuffer();
+		myBuff.append("THIS::\t" + this.getData() + "\n");
+
+		myBuff.append("PARENT::");
+		if(this.getParent() == null){
+			myBuff.append("NULL");
+		}else{
+			myBuff.append(this.getParent().getData());
+		}
+		
+		return myBuff.toString();
+	}
 	
 }
